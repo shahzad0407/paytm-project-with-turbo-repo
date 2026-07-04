@@ -1,0 +1,20 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler", // THIS FIXES THE EXTENSION CONFLICT
+    "outDir": "dist",
+    "composite": true,
+    "incremental": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@prisma/client": ["./generated/prisma/client.ts"]
+    }
+  },
+  "include": ["src", "generated/**/*", "prisma.config.ts"],
+  "exclude": ["node_modules"]
+}
